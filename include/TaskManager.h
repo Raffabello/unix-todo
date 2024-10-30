@@ -4,18 +4,20 @@ class TaskManager {
     public:
         const string TASK_FILE_NAME = "unixtodo-tasks";
 
-        int open_file(){
-            ofstream file;
-            file.open(TASK_FILE_NAME);
-            if(!file){
-                cerr << "The file could not be created!";
-                return 1;
+        ofstream* create_file(){
+            ofstream *file = new ofstream();
+            file -> open(TASK_FILE_NAME);
+            if(!(file -> is_open())){
+                cerr << "The file could not be created" << endl;
+                delete file;
+                return nullptr;
             }
-            file.close();
-            return 0;
+            return file;
         }
 
-        int add_task(){
+        int add_task(string task){
+            create_file();
             
+            return 0;
         }
 };
