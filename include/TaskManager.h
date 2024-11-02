@@ -36,6 +36,8 @@ class TaskManager {
             }else{
                 *file << "[ ] " << task << endl;
                 delete file;
+                cout << "The task was added" << endl;
+                
                 return 0;
             }
         }
