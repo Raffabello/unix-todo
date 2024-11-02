@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include "../include/TaskManager.h"
 
@@ -6,8 +7,13 @@ using namespace std;
 int main(int argc, char **argv){
     if(argc == 3){
         string command = argv[1];
+        TaskManager task_manager;
+
         if(command == "-a" || command == "--add"){
             string task = argv[2];
+            TaskManager tm;
+            tm.create_file();
+            tm.add_task(task);
         }
         else{
             cout << "The command is not recognized" << endl;
