@@ -21,6 +21,9 @@ int main(int argc, char **argv){
             return 1;
         }
     }
+    else if(argc == 2 && command == "--show"){
+        task_manager.show_task();
+    }
     else{
         cerr << "The command is malformed" << endl;
         return 1;
