@@ -8,17 +8,23 @@ class TaskManager {
 
         int create_file(){
             ofstream *file = new ofstream();
-            file -> open(TASK_FILE_NAME);
-            if(!(file -> is_open())){
-                cerr << "The task file could not be created" << endl;
-                file -> close();
-                delete file;
-                return 1;
-            }
-            else{
-                cout << "The task file was created" << endl;
+            if(file -> good()){
                 return 0;
             }
+            else{
+                file -> open(TASK_FILE_NAME);
+                if(!(file -> is_open())){
+                    cerr << "The task file could not be created" << endl;
+                    file -> close();
+                    delete file;
+                    return 1;
+                }
+                else{
+                    cout << "The task file was created";
+                    return 0;
+                }
+            }
+
         }
 
         int add_task(string task){  
