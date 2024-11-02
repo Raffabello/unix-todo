@@ -8,8 +8,6 @@ int main(int argc, char **argv){
     TaskManager task_manager;
     string command = argv[1];
     if(argc == 3){
-        string command = argv[1];
-        TaskManager task_manager;
 
         if(command == "-a" || command == "--add"){
             string task = argv[2];
