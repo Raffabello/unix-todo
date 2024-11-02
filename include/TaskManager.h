@@ -29,7 +29,8 @@ class TaskManager {
                 return 1;
             }else{
                 *file << "[ ] " << task << endl;
+                delete file;
+                return 0;
             }
-            return 0;
         }
 };
