@@ -11,9 +11,8 @@ int main(int argc, char **argv){
 
         if(command == "-a" || command == "--add"){
             string task = argv[2];
-            TaskManager tm;
-            tm.create_file();
-            tm.add_task(task);
+            task_manager.create_file();
+            task_manager.add_task(task);
         }
         else{
             cout << "The command is not recognized" << endl;
