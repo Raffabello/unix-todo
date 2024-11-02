@@ -33,4 +33,17 @@ class TaskManager {
                 return 0;
             }
         }
+
+        void show_task(){
+            ifstream* file = new ifstream(TASK_FILE_NAME);
+            string task;
+            if(!(file -> is_open())){
+                cerr << "Could not read the task file" << endl;
+                delete file;
+            }else{
+                while(getline(*file,task)){
+                    cout << task << endl;
+                }
+            }
+        }
 };
